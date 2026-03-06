@@ -42,7 +42,7 @@ const animationBarChart = () => {
     .attr("height", 0)
     .attr("fill", bgColor) 
 
-
+  //Legenda eixo y
   svg.append("text")
     .attr("text-anchor", "middle")
     .attr("transform", `translate(${margin.left / 6}, ${height / 2}) rotate(-90)`)
