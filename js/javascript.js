@@ -3,7 +3,7 @@ const animationBarChart = () => {
     { ano: "2016", numero: 32 },
     { ano: "2017", numero: 50 },
     { ano: "2018", numero: 70 },
-    { ano: "2019", numero: 90 },
+    { ano: "2019", numero: 74 },
     { ano: "2020", numero: 87 },
     { ano: "2021", numero: 93 },
     { ano: "2022", numero: 100 }
@@ -11,7 +11,7 @@ const animationBarChart = () => {
 
   const width = 800
   const height = 350
-  const margin = { top: 20, bottom: 50, left: 50, right: 30 }
+  const margin = { top: 20, bottom: 50, left: 90, right: 30 }
   const bgColor = "#f2f6fc"
   const barColor = "steelblue"
 
@@ -42,6 +42,18 @@ const animationBarChart = () => {
     .attr("height", 0)
     .attr("fill", bgColor) 
 
+
+  svg.append("text")
+    .attr("text-anchor", "middle")
+    .attr("transform", `translate(${margin.left / 6}, ${height / 2}) rotate(-90)`)
+    .style("font-family", "Poppins, sans-serif")
+    .style("font-size", "20px")
+    .style("fill", "#020000")
+    .text("Projetos Completos")
+
+
+    
+    
   const xAxis = (g) => {
     g.attr("transform", `translate(0,${height - margin.bottom})`)
       .call(d3.axisBottom(x).tickFormat(i => data[i].ano))
