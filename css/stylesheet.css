@@ -194,6 +194,62 @@ section.grafico h1{
     margin-right: 100px;
 }
 
+/*Popup para oportunidades suportado com javascript*/
+
+.sidepop {
+  height: auto;
+  min-height: 150px;
+  width: 0;
+  position: fixed;
+  z-index: 9999;
+  top: 50%;      
+  right: 0;           
+  transform: translateY(-50%); 
+  background-color: #ffffff;
+  color: #e4dede;
+  overflow-x: hidden;
+  transition: 0.5s;
+  border-radius: 10px 0 0 10px; 
+  box-shadow: -5px 0 15px rgba(0, 0, 0, 0.3);
+}
+
+.sidepop-content {
+  padding: 20px;
+  min-width: 10%; 
+  margin-left: 20%;
+}
+
+.sidepop a {
+  padding: 10px 0;
+  text-decoration: none;
+  font-size: 18px;
+  color: #1a73e8;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidepop .closebtn {
+  position: absolute;
+  top: 5px;
+  right: 15px;
+  font-size: 30px;
+  color: white;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+#main {
+  transition: margin-left .5s;
+  padding: 20px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+
+
+
 /* TABELA */
 table {
     width: 100%;

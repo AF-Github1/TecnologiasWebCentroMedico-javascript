@@ -1,4 +1,6 @@
-const animationBarChart = () => {
+
+//Função responsável
+function animationBarChart () {
   const data = [
     { ano: "2016", numero: 32 },
     { ano: "2017", numero: 50 },
@@ -10,7 +12,7 @@ const animationBarChart = () => {
   ]
 
   const width = 800
-  const height = 350
+  const height = 250
   const margin = { top: 20, bottom: 50, left: 90, right: 30 }
   const bgColor = "#f2f6fc"
   const barColor = "steelblue"
@@ -89,4 +91,15 @@ const animationBarChart = () => {
   observer.observe(document.querySelector("#grafico"))
 }
 
-animationBarChart()
+
+
+
+/* Set the width of the side navigation to 250px */
+function openNav() {
+  document.getElementById("sidepopup").style.width = "250px";
+}
+
+/* Set the width of the side navigation to 0 */
+function closeNav() {
+  document.getElementById("sidepopup").style.width = "0";
+}
