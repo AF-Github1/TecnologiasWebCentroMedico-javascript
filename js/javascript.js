@@ -58,7 +58,7 @@ const animationBarChart = () => {
   svg.append("g").call(yAxis)
 
   /* Lógica de trigger (Observer) + transição (transition()) 
-    O utilizador quando chega dentro de uma determinada da página ativa 
+    O utilizador quando chega dentro de uma determinada secção da página ativa 
     a animação do gráfico de barras a encher*/
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
@@ -72,7 +72,7 @@ const animationBarChart = () => {
         observer.unobserve(entry.target)
       }
     })
-  }, { threshold: 0.2 })
+  }, { threshold: 0.6 })
 
   observer.observe(document.querySelector("#grafico"))
 }
