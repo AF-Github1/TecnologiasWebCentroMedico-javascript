@@ -194,38 +194,37 @@ section.grafico h1{
     margin-right: 100px;
 }
 
-/*Popup para oportunidades suportado com javascript*/
+/*Popup para secção oportunidades suportado com javascript*/
 
 .sidepop {
   height: auto;
   min-height: 150px;
-  width: 0;
+  width: 0px; /*Mudar este valor para 250px caso esteja-se a editar*/
   position: fixed;
-  z-index: 9999;
   top: 50%;      
   right: 0;           
-  transform: translateY(-50%); 
   background-color: #ffffff;
   color: #e4dede;
   overflow-x: hidden;
   transition: 0.5s;
-  border-radius: 10px 0 0 10px; 
-  box-shadow: -5px 0 15px rgba(0, 0, 0, 0.3);
+  border-radius: 10px; 
+  border: 2px solid black;
 }
 
-.sidepop-content {
-  padding: 20px;
-  min-width: 10%; 
-  margin-left: 20%;
-}
 
 .sidepop a {
-  padding: 10px 0;
+  flex-wrap: wrap;
   text-decoration: none;
-  font-size: 18px;
+  font-size: 25px;
   color: #1a73e8;
   display: block;
   transition: 0.3s;
+  text-align: center;
+  padding: 10px;
+}
+
+.sidepop p {
+    margin: 0%;
 }
 
 .sidepop .closebtn {
@@ -307,6 +306,7 @@ th {
 
 
 .contacto-form form {
+    scroll-margin-top: 150px;
     display: flex;
     flex-direction: column;
     gap: 10px;

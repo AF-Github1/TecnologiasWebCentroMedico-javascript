@@ -12,7 +12,7 @@ function animationBarChart () {
   ]
 
   const width = 800
-  const height = 250
+  const height = 250 
   const margin = { top: 20, bottom: 50, left: 90, right: 30 }
   const bgColor = "#f2f6fc"
   const barColor = "steelblue"
@@ -94,12 +94,46 @@ function animationBarChart () {
 
 
 
-/* Set the width of the side navigation to 250px */
 function openNav() {
-  document.getElementById("sidepopup").style.width = "250px";
+  const userCheck = sessionStorage.getItem("check")
+  if (userCheck !== "1") {
+    document.getElementById("sidepopup").style.width = "250px";
+  }
 }
 
-/* Set the width of the side navigation to 0 */
 function closeNav() {
   document.getElementById("sidepopup").style.width = "0";
 }
+
+// Depois de um utilizador fechar o popup por si próprio, o popup nunca volta a aparecer até uma nova página ser aberta
+function userDismiss() {
+  sessionStorage.setItem("check" , "1");
+
+}
+
+// Lógica para permitar um popup aparecer depois do utilizador passar 3 segundos na secção de Oportunidades da página
+function setupOpportunityPopup () {
+  let timeout
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        timeout = setTimeout(() => {
+          openNav()
+        }, 3000)
+      } else {
+        clearTimeout(timeout)
+        closeNav()
+      }
+    })
+  }, { threshold: 0.6 })
+
+  const target = document.querySelector("#oportunidades")
+  if (target) {
+    observer.observe(target)
+  }
+}
+
+window.addEventListener("DOMContentLoaded", () => {
+  setupOpportunityPopup()
+})
