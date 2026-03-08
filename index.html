@@ -10,7 +10,7 @@
   <link rel="stylesheet" href="css/stylesheet.css">
   <script type="text/javascript" src="js/javascript.js" defer></script>
   <script src="https://d3js.org/d3.v7.min.js" ></script>
-
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>.
 
 </head>
 
@@ -64,21 +64,58 @@
       <section id="investigacao" class="investigacao" tabindex="0">
         
         <h1>Áreas de Investigação</h1>
-        <div class="grid-investigacao">
-          <div class="grid-box-investigacao">
-            <h3>Epidemiologia</h3>
-            <p>A epidemiologia é a ciência que estuda a distribuição, determinantes e prevenção de doenças em populações, sendo essencial para a tomada de decisões em saúde pública. Nos Açores, a doença Machado-Joseph é estudada epidemiologicamente, permitindo compreender sua prevalência, risco e impacto na comunidade. <a href="https://www.google.com/" target="_blank">Saiba mais</a></p>
+        <div class="grid-investigacao" >
+          <div class="grid-box-investigacao" onclick="focusIn(this); focusOut(this)">
+
+            <div class="conteudo-box">
+            <h3 class="text-title">Epidemiologia</h3>
+            <p>A epidemiologia é a ciência que estuda a distribuição, determinantes e prevenção de doenças em populações, 
+              sendo essencial para a tomada de decisões em saúde pública. Nos Açores, a doença Machado-Joseph é estudada epidemiologicamente, 
+              permitindo compreender sua prevalência, risco e impacto na comunidade. 
+              <a href="https://www.google.com/" target="_blank">Saiba mais</a></p>
             <p><strong>Professor Responsável: </strong>Maria Silva</p>
+            </div>
+
+            <div class="stat-box" >
+            <p><strong>Projetos Ativos:</strong> 32</p>
+            <p><strong>Investigadores:</strong> 9</p>
+            <p><strong>Workshops realizadas:</strong> 68</p>
+            </div>
           </div>
-          <div class="grid-box-investigacao">
-            <h3>Telemedicina</h3>
-            <p>A telemedicina representa a prestação de cuidados de saúde à distância, sendo potenciada por plataformas que garantem a integridade dos dados, protocolos automáticos para a triagem eficiente e acesso rápido a histórico clínico. Nos Açores, a telemedicina pode permitir encaminhamentos rápidos entre ilhas, gerindo os diferentes recursos e incluindo a transferência segura de informações clínicas. <a href="https://www.google.com/" target="_blank">Saiba mais</a></p>
+
+          <div class="grid-box-investigacao" onclick="focusIn(this); focusOut(this)">
+            <div class="conteudo-box">
+            <h3 class="text-title">Telemedicina</h3>
+            <p>A telemedicina representa a prestação de cuidados de saúde à distância, sendo potenciada por plataformas que garantem a integridade dos dados, 
+              protocolos automáticos para a triagem eficiente e acesso rápido a histórico clínico. Nos Açores, a telemedicina pode permitir encaminhamentos rápidos 
+              entre ilhas, gerindo os diferentes recursos e incluindo a 
+              transferência segura de informações clínicas.
+              <a href="https://www.google.com/" target="_blank">Saiba mais</a></p>
             <p><strong>Professor Responsável: </strong>Ana Campos</p>
+            </div>
+
+            <div class="stat-box">
+            <p><strong>Projetos Ativos:</strong> 18</p>
+            <p><strong>Investigadores:</strong> 12</p>
+            <p><strong>Workshops realizadas:</strong> 43</p>
+            </div>
           </div>
-          <div class="grid-box-investigacao">
-            <h3>Saúde Mental</h3>
-            <p>A saúde mental refere-se ao bem-estar emocional, psicológico e social de uma pessoa, influenciando como pensa, sente e age no dia a dia, bem como a capacidade de lidar com o stress, relacionar-se e tomar decisões. Sendo os Açores a região do país com maior taxa de obesidade e suicídios, a promoção estruturada do exercício físico pode contribuir simultaneamente para a saúde física e mental. <a href="https://www.google.com/" target="_blank">Saiba mais</a></p>
+
+          <div class="grid-box-investigacao" onclick="focusIn(this); focusOut(this)">
+            <div class="conteudo-box">
+            <h3 class="text-title">Saúde Mental</h3>
+            <p>A saúde mental refere-se ao bem-estar emocional, psicológico e social de uma pessoa, influenciando como pensa, sente e age no dia a dia, 
+              bem como a capacidade de lidar com o stress, relacionar-se e tomar decisões. Sendo os Açores a região do país com maior taxa de obesidade e suicídios, 
+              a promoção estruturada do exercício físico pode contribuir 
+              simultaneamente para a saúde física e mental.
+               <a href="https://www.google.com/" target="_blank">Saiba mais</a></p>
             <p><strong>Professor Responsável: </strong>José Rocha</p>
+          </div>
+
+          <div class="stat-box">
+          <p><strong>Projetos Ativos:</strong> 22</p>
+          <p><strong>Investigadores:</strong> 5</p>
+          <p><strong>Workshops realizadas:</strong> 32</p>
           </div>
         </div>
       </section>
@@ -112,10 +149,6 @@
       </section>
       
     </section>
-
-
-
-
 
 
 
@@ -195,11 +228,11 @@
           <div class="contacto-form">
             <h4>Contate-nos:</h4>
             <form id = "contacto-form">
-              <input type="text" id="nome" placeholder="Nome">
-              <input type="email" id="email" placeholder="Email">
-              <input type="text" id="assunto" placeholder="Assunto">
-              <textarea placeholder="Mensagem" id="mensagem"> </textarea>
-              <button type="submit">Enviar</button>
+              <input id = "name" placeholder="Nome*">
+              <input id = "email" placeholder="Email*">
+              <input id = "subject" placeholder="Assunto*">
+              <textarea id = "message" placeholder="Mensagem*"></textarea>
+              <button type="submit" onclick="checkForm();">Enviar</button>
             </form>
           </div>
         </div>
