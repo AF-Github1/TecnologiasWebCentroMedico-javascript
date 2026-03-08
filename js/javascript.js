@@ -1,4 +1,4 @@
-/* global d3, IntersectionObserver, sessionStorage */
+/* global d3, IntersectionObserver, sessionStorage, gsap */
 
 function animationBarChart () {
   const data = [
@@ -111,7 +111,7 @@ function userDismiss () {
 }
 
 // Lógica para permitar um popup aparecer depois do utilizador passar 3 segundos na secção de Oportunidades da página
-function setupOpportunityPopup () {
+function popupStart () {
   let timeout
 
   const observer = new IntersectionObserver((entries) => {
@@ -135,7 +135,48 @@ function setupOpportunityPopup () {
 }
 
 window.addEventListener('DOMContentLoaded', () => {
-  setupOpportunityPopup()
+  popupStart()
   animationBarChart()
 }
 )
+
+// Animação para secção de investigação usando GSAP. Permite tocar nas caixas de texto de forma a mostrar alguns dados sobre a área estudada
+
+// Troca o texto principal para as estatisticas secundarias
+function focusIn(element) {
+  if (element.classList.contains('is-open')) return;
+  element.classList.add('is-open');
+
+  const conteudo = element.querySelector('.conteudo-box')
+  const stats = element.querySelector('.stat-box')
+  const titulo = element.querySelector('.text-title')
+
+  const timeline = gsap.timeline()
+
+  timeline.to(conteudo, { duration: 0.5, x: -50, opacity: 0, display: 'none', ease: 'power2.in' })
+    .to(titulo, { duration: 0.5, scale: 1.1, color: '#1a73e8', ease: 'back.out(1.7)' }, '-=0.2')
+    .fromTo(stats,
+      { x: 40, opacity: 0, display: 'none' },
+      { x: 0, opacity: 1, display: 'block', duration: 0.5, ease: 'power2.out' }
+    )
+}
+
+// Troca as estatisticas secundarias para o texto principal
+
+function focusOut(element) {
+  if (!element.classList.contains('is-open')) return;
+  element.classList.remove('is-open');
+
+  const conteudo = element.querySelector('.conteudo-box')
+  const stats = element.querySelector('.stat-box')
+  const titulo = element.querySelector('.text-title')
+
+  const timeline = gsap.timeline()
+
+  timeline.to(stats, { duration: 0.5, x: 50, opacity: 0, display: 'none' })
+    .to(titulo, { duration: 0.5, scale: 1, color: '#0f9d58' })
+    .fromTo(conteudo,
+      { x: -50, opacity: 0, display: 'none' },
+      { x: 0, opacity: 1, display: 'block', duration: 0.4, ease: 'power2.out' }
+    )
+}
