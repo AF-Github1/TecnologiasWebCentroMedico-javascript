@@ -1,6 +1,4 @@
-/* global d3 */
-/* global IntersectionObserver */
-/* global sessionStorage*/
+/* global d3, IntersectionObserver, sessionStorage */
 
 function animationBarChart () {
   const data = [
@@ -99,7 +97,7 @@ function animationBarChart () {
 function openNav () {
   const userCheck = sessionStorage.getItem('check')
   if (userCheck !== '1') {
-    document.getElementById('sidepopup').style.width = '250px';
+    document.getElementById('sidepopup').style.width = '250px'
   }
 }
 
@@ -138,5 +136,6 @@ function setupOpportunityPopup () {
 
 window.addEventListener('DOMContentLoaded', () => {
   setupOpportunityPopup()
+  animationBarChart()
 }
 )
