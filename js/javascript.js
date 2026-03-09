@@ -181,6 +181,9 @@ function focusOut(element) {
     )
 }
 
+
+// Funções responsáveis pela validação de inputs no formulários
+
 const validateEmail = (email) => {
   const emailRegex = /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/
   return emailRegex.test(email)
