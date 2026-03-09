@@ -214,12 +214,12 @@ section.grafico h1{
     margin-right: 100px;
 }
 
-/*Popup para secção oportunidades suportado com javascript*/
+/* Popup para secção oportunidades suportado com javascript */
 
 .sidepop {
   height: auto;
   min-height: 150px;
-  width: 0px; /*Mudar este valor para 250px caso esteja-se a editar*/
+  width: 0px; /* Mudar este valor para 250px caso esteja-se a editar (valor de popup quando ativo) */
   position: fixed;
   top: 50%;      
   right: 0;           
@@ -535,7 +535,7 @@ footer {
     }
     
     table {
-        min-width: 500px; /* Ensures table doesn't get too squished */
+        min-width: 500px;
     }
 
     .contacto-info {

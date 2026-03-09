@@ -32,6 +32,7 @@ function animationBarChart () {
     .padding(0.2)
 
   // Eixo y
+  
   const y = d3.scaleLinear()
     .domain([0, 100])
     .range([height - margin.bottom, margin.top])
@@ -144,8 +145,8 @@ window.addEventListener('DOMContentLoaded', () => {
 
 // Troca o texto principal para as estatisticas secundarias
 function focusIn(element) {
-  if (element.classList.contains('is-open')) return;
-  element.classList.add('is-open');
+  if (element.classList.contains('1')) return;
+  element.classList.add('1');
 
   const conteudo = element.querySelector('.conteudo-box')
   const stats = element.querySelector('.stat-box')
@@ -164,8 +165,8 @@ function focusIn(element) {
 // Troca as estatisticas secundarias para o texto principal
 
 function focusOut(element) {
-  if (!element.classList.contains('is-open')) return;
-  element.classList.remove('is-open');
+  if (!element.classList.contains('1')) return;
+  element.classList.remove('1');
 
   const conteudo = element.querySelector('.conteudo-box')
   const stats = element.querySelector('.stat-box')
