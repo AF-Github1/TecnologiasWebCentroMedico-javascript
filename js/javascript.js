@@ -207,3 +207,8 @@ function checkForm() {
     alert('Formulário não enviado, confirme as informações submetidas! \nTodos os campos são obrigatórios')
   }
 }
+
+window.addEventListener('scroll', () => {
+  const btn = document.getElementById('backToTop');
+  btn.style.display = window.scrollY > 800 ? 'block' : 'none';
+});
