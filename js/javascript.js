@@ -32,7 +32,7 @@ function animationBarChart () {
     .padding(0.2)
 
   // Eixo y
-  
+
   const y = d3.scaleLinear()
     .domain([0, 100])
     .range([height - margin.bottom, margin.top])
@@ -164,7 +164,6 @@ function textSwap(element) {
   }
 }
 
-
 // Funções responsáveis pela validação de inputs no formulários
 
 const validateEmail = (email) => {
@@ -183,7 +182,7 @@ function checkForm() {
   const subject = document.getElementById('subject').value
   const message = document.getElementById('message').value
 
-  if (validateEmail (email) && !hasNumbers(name) && subject !== '' && message !== '') {
+  if (validateEmail(email) && !hasNumbers(name) && subject !== '' && message !== '') {
     alert(name + ', o seu formulário foi enviado com sucesso')
   } else {
     alert('Formulário não enviado, confirme as informações submetidas! \nTodos os campos são obrigatórios')
@@ -191,6 +190,6 @@ function checkForm() {
 }
 
 window.addEventListener('scroll', () => {
-  const btn = document.getElementById('backToTop');
-  btn.style.display = window.scrollY > 800 ? 'block' : 'none';
-});
+  const btn = document.getElementById('backToTop')
+  btn.style.display = window.scrollY > 800 ? 'block' : 'none'
+})
