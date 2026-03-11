@@ -32,6 +32,7 @@ function animationBarChart () {
     .padding(0.2)
 
   // Eixo y
+  
   const y = d3.scaleLinear()
     .domain([0, 100])
     .range([height - margin.bottom, margin.top])
@@ -162,6 +163,9 @@ function textSwap(element) {
       )
   }
 }
+
+
+// Funções responsáveis pela validação de inputs no formulários
 
 const validateEmail = (email) => {
   const emailRegex = /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/
