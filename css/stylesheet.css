@@ -86,6 +86,8 @@ section.investigacao h3{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 50px;
+    min-height: 350px;
+    overflow: hidden;
 }
 
 .grid-box-investigacao:hover {
@@ -535,7 +537,7 @@ footer {
     }
     
     table {
-        min-width: 500px; /* Ensures table doesn't get too squished */
+        min-width: 500px; /
     }
 
     .contacto-info {
