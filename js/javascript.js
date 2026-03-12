@@ -193,3 +193,24 @@ window.addEventListener('scroll', () => {
   const btn = document.getElementById('backToTop')
   btn.style.display = window.scrollY > 800 ? 'block' : 'none'
 })
+
+let atual = 0;
+const total = 3;
+let autoplay = setInterval(() => mudar(1), 5000);
+
+function irPara(index) {
+  document.querySelectorAll('.bolinha')[atual].classList.remove('active');
+
+  atual = (index + total) % total;
+
+  document.querySelector('.slides').style.transform = `translateX(-${atual * 100}%)`;
+
+  document.querySelectorAll('.bolinha')[atual].classList.add('active');
+
+  clearInterval(autoplay);
+  autoplay = setInterval(() => mudar(1), 5000);
+}
+
+function mudar(direcao) {
+  irPara(atual + direcao);
+}
