@@ -4,6 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" href="media/logo-icon.png" style="width: 50%; height: 50%;">
   <title>CACA</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
@@ -41,7 +42,22 @@
     <main>
       <section id="apresentacao" class="apresentacao" tabindex="0">
         <div class="banner">
-          <img src="media/universidade.png" alt="Imagem principal">
+          <div class="slideshow">
+            <div class="slides">
+              <img src="media/universidade_pdl.png" alt="Imagem Universidade São Miguel">
+              <img src="media/universidade_faial.jpg" alt="Imagem Universidade Faial">
+              <img src="media/universidade_terceira.png" alt="Imagem Universidade Terceira">
+            </div>
+
+            <button class="btn prev" onclick="mudar(-1)">&#8592;</button>
+            <button class="btn next" onclick="mudar(1)">&#8594;</button>
+
+            <div class="bolinhas">
+              <span class="bolinha active" onclick="irPara(0)"></span>
+              <span class="bolinha" onclick="irPara(1)"></span>
+              <span class="bolinha" onclick="irPara(2)"></span>
+            </div>
+          </div>
         </div>
 
         <div class="texto">
