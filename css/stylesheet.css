@@ -20,7 +20,7 @@ header {
     background-color: #ffffff;
     color: #333333;
     border-bottom: 1px solid #000000;
-    
+    z-index: 999;
 }
 
 .logo img{
