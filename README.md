@@ -1,7 +1,8 @@
 Tecnologias Web, PEI2 : Javascript
 Grupo 4
 
-Conforme pedido no enunciado foi adicionado um formulário funcional, 2 animações feitas com bibliotecas externas e 3 eventos distintos, em Javascript
+Conforme pedido no enunciado foi adicionado um formulário funcional, 2 animações feitas com bibliotecas externas e 3 eventos distintos, em Javascript.
+Para efeitos de formatação de Javascript, foi utilizado JavaScript Standard Style
 
 Formulário:
 Já existia um formulário (não funcional) na versão do trabalho entregue em PE1. Este formulário foi adaptado de forma a que se consiga inserir um Nome, Email, Assunt e Mensagem, sendo o email validado para verificar se acaba numa extensão válida (name@gmail.com por exemplo)
