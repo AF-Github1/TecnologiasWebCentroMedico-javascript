@@ -143,7 +143,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
 // Animação para secção de investigação usando GSAP. Permite tocar nas caixas de texto de forma a mostrar alguns dados sobre a área estudada e tocar nestes dados para voltar para a caixa de texto
 
-function textSwap(element) {
+function textSwap (element) {
   const conteudo = element.querySelector('.conteudo-box')
   const stats = element.querySelector('.stat-box')
   const titulo = element.querySelector('.text-title')
@@ -176,7 +176,7 @@ function hasNumbers (t) {
   return regex.test(t)
 }
 
-function checkForm() {
+function checkForm () {
   const name = document.getElementById('name').value
   const email = document.getElementById('email').value
   const subject = document.getElementById('subject').value
@@ -194,23 +194,23 @@ window.addEventListener('scroll', () => {
   btn.style.display = window.scrollY > 800 ? 'block' : 'none'
 })
 
-let atual = 0;
-const total = 3;
-let autoplay = setInterval(() => mudar(1), 5000);
+let atual = 0
+const total = 3
+let autoplay = setInterval(() => mudar(1), 5000)
 
-function irPara(index) {
-  document.querySelectorAll('.bolinha')[atual].classList.remove('active');
+function irPara (index) {
+  document.querySelectorAll('.bolinha')[atual].classList.remove('active')
 
-  atual = (index + total) % total;
+  atual = (index + total) % total
 
-  document.querySelector('.slides').style.transform = `translateX(-${atual * 100}%)`;
+  document.querySelector('.slides').style.transform = `translateX(-${atual * 100}%)`
 
-  document.querySelectorAll('.bolinha')[atual].classList.add('active');
+  document.querySelectorAll('.bolinha')[atual].classList.add('active')
 
-  clearInterval(autoplay);
-  autoplay = setInterval(() => mudar(1), 5000);
+  clearInterval(autoplay)
+  autoplay = setInterval(() => mudar(1), 5000)
 }
 
-function mudar(direcao) {
-  irPara(atual + direcao);
+function mudar (direcao) {
+  irPara(atual + direcao)
 }

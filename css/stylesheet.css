@@ -537,8 +537,15 @@ footer {
     }
     
     table {
-        min-width: 500px;
+        width: 100%;
+        min-width: 200px;
     }
+
+    .table-container {
+        width: 100%;
+        min-width: 200px;
+    }
+
 
     .contacto-info {
         justify-items: center;
