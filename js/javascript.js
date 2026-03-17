@@ -2,7 +2,7 @@
 
   const THRESHOLD = 0.6
 
-function animationBarChart () {
+function animationBarChart () { //##!! Reformular. Necessária passar consts para fora, como parâmetros, depois chamar função
   /**
  * Função para realização do gráfico de barras com d3.js
  * @param  {[type]} arg1 [description]
@@ -20,7 +20,7 @@ function animationBarChart () {
     { ano: '2022', numero: 100 }
   ]
 
-  // Caracteristicas do gráfico
+  // Caracteristicas do gráfico //##!! Possivelmente passar para fora?
   const WIDTH = 800
   const HEIGHT = 250
   const MARGIN = { top: 20, bottom: 50, left: 90, right: 30 }
@@ -82,7 +82,7 @@ function animationBarChart () {
 
   const TRANSITION_DURATION = 1500
 
-  const observer = new IntersectionObserver((entries) => {
+  const observer = new IntersectionObserver((entries) => { //##!! função própria, devido a incluir transition internamente
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         bars.transition()
