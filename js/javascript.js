@@ -1,5 +1,8 @@
 /* global d3, IntersectionObserver, sessionStorage, gsap */
 
+  const THRESHOLD = 0.6
+
+// Funções para realização do gráfico de barras com d3.js
 function animationBarChart () {
   const DATA = [ // Dados para serem usados em gráfico de barras (ano = eixo x, numero = eixo y)
     { ano: '2016', numero: 32 },
@@ -71,11 +74,13 @@ function animationBarChart () {
   O utilizador quando chega dentro de uma determinada secção da página ativa (threshold)
   a animação do gráfico de barras a encher */
 
+  const TRANSITION_DURATION = 1500
+
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         bars.transition()
-          .duration(1500)
+          .duration(TRANSITION_DURATION)
           .attr('y', d => y(d.numero))
           .attr('height', d => y(0) - y(d.numero))
           .attr('fill', BAR_COLOR)
@@ -83,7 +88,7 @@ function animationBarChart () {
         observer.unobserve(entry.target)
       }
     })
-  }, { threshold: 0.6 })
+  }, { threshold: THRESHOLD })
 
   observer.observe(document.querySelector('#grafico'))
 }
@@ -110,19 +115,21 @@ function userDismiss () {
 // Lógica para permitar um popup aparecer depois do utilizador passar 3 segundos na secção de Oportunidades da página
 function popupStart () {
   let timeout
+  const TIME_INTERVAL = 3000
+  
 
   const observer = new IntersectionObserver((entries) => { //##!! Necessário simplificar
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         timeout = setTimeout(() => {
           openNav()
-        }, 3000)
+        }, TIME_INTERVAL)
       } else {
         clearTimeout(timeout)
         closeNav()
       }
     })
-  }, { threshold: 0.6 }
+  }, { threshold: THRESHOLD }
   )
 
   const TARGET = document.querySelector('#oportunidades')
