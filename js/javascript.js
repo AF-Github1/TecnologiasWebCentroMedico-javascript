@@ -20,7 +20,7 @@ function animationBarChart () { //##!! Reformular. Necessária passar consts par
     { ano: '2022', numero: 100 }
   ]
 
-  // Caracteristicas do gráfico //##!! Possivelmente passar para fora?
+  // Caracteristicas do gráfico //##!! Possivelmente passar para fora como parametro, incluindo DATA?
   const WIDTH = 800
   const HEIGHT = 250
   const MARGIN = { top: 20, bottom: 50, left: 90, right: 30 }
