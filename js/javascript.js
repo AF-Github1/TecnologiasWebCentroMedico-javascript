@@ -4,7 +4,7 @@
 
 function animationBarChart () { //##!! Reformular. Necessária passar consts para fora, como parâmetros, depois chamar função
   /**
- * Função para realização do gráfico de barras com d3.js
+ * Função para realização do gráfico de barras com d3.js //##!!seria 12 parametros com todas estas constantes? mas não convem serem globais..
  * @param  {[type]} arg1 [description]
  * @param  {[type]} arg2 [description]
  * @return {[type]}      [description]
