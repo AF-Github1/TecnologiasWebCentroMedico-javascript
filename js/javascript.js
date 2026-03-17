@@ -2,8 +2,14 @@
 
   const THRESHOLD = 0.6
 
-// Funções para realização do gráfico de barras com d3.js
 function animationBarChart () {
+  /**
+ * Função para realização do gráfico de barras com d3.js
+ * @param  {[type]} arg1 [description]
+ * @param  {[type]} arg2 [description]
+ * @return {[type]}      [description]
+ */
+
   const DATA = [ // Dados para serem usados em gráfico de barras (ano = eixo x, numero = eixo y)
     { ano: '2016', numero: 32 },
     { ano: '2017', numero: 50 },
