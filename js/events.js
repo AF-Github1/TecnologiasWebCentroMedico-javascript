@@ -1,5 +1,8 @@
 /* global d3, IntersectionObserver, sessionStorage, gsap */
 
+/* Este ficheiro está dedicado às funções dos eventos javascript de galeria, seta de voltar ao topo e popup */
+
+
 // Funções para o popup na secção de Oportunidades
 
 // Expande o popup para tornar-se visível
