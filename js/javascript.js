@@ -168,6 +168,13 @@ function textSwap (element) {
   }
 }
 
+//##!! Secção reservada à implementação de 3js (animação com BMP )
+
+
+
+
+
+
 // Funções responsáveis pela validação de inputs no formulários
 
 const validateEmail = (email) => {
