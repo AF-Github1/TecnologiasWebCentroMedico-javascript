@@ -2,6 +2,13 @@
 tocar neste caixa de dados para voltar para a caixa de texto */
 
 function textSwap (element) {
+  /*
+  Permite substituição entre 2 caixas de texto com conteúdo diferentes quando o utilizar clica nelas
+
+  * @param {HTMLElement} element - Contém a referência ao element html que se está a manipular, de forma a fazer referência às secções no css que serão mudadas
+    de forma a criar o efeito animado
+
+  */
   const conteudo = element.querySelector('.conteudo-box')
   const stats = element.querySelector('.stat-box')
   const titulo = element.querySelector('.text-title')
