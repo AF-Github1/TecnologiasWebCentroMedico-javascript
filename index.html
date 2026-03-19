@@ -270,7 +270,15 @@
                 </select>
                 <input id="phone-number" type="tel" placeholder="Telefone (opcional)">
               </div>
-              <input id = "subject" placeholder="Assunto*">
+              <select id="subject" onchange="preencherMensagem()">
+                <option value="">Assunto*</option>
+                <option value="Informações sobre oportunidades">Informações sobre oportunidades</option>
+                <option value="Candidatura a bolsa de investigação">Candidatura a bolsa de investigação</option>
+                <option value="Parceria institucional">Parceria institucional</option>
+                <option value="Pedido de informação geral">Pedido de informação geral</option>
+                <option value="outro">Outro assunto...</option>
+              </select>
+              <input id="subject-custom" placeholder="Especifique o assunto*" style="display:none;">
               <textarea id = "message" placeholder="Mensagem*"></textarea>
               <button type="submit" onclick="checkForm();">Enviar</button>
             </form>
