@@ -1,8 +1,8 @@
 /* global THREE */
 
 const SCENE_CONFIG = {
-  containerId: 'container-3d',
-  modelPath: 'media/cruz.glb',
+  containerAnimacao: 'container-3d',
+  ficheiro: 'media/cruz.glb',
   rotationSpeed: 0.02
 }
 
@@ -11,7 +11,7 @@ function inicializarCena () {
   Inicializa a cena 3D, configurando a posição da camera, o tipo de luz que incide sobre o objecto e a posição do modelo, sendo o modelo uma cruz 3D criada em blender
   */
 
-  const container = document.getElementById(SCENE_CONFIG.containerId)
+  const container = document.getElementById(SCENE_CONFIG.containerAnimacao)
   const scene = new THREE.Scene()
 
   const camera = new THREE.PerspectiveCamera(60, container.clientWidth / container.clientHeight, 0.1, 100) // Configuração do posicionamento da camera
@@ -30,7 +30,7 @@ function inicializarCena () {
   let model
 
   loader.load(
-    SCENE_CONFIG.modelPath,
+    SCENE_CONFIG.ficheiro,
     (gltf) => {
       model = gltf.scene
 

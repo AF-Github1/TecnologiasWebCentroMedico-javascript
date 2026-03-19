@@ -118,5 +118,4 @@ function chartTransition (bars, y, thresholdValue = THRESHOLD, duration = TRANSI
 
 window.addEventListener('DOMContentLoaded', () => {
   animationBarchart()
-}
-)
+})
