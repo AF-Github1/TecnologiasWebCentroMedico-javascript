@@ -344,7 +344,8 @@ th {
 }
 
 .contacto-form input,
-.contacto-form textarea {
+.contacto-form textarea
+.contacto-form select {
     padding: 10px;
     border: 1px solid #ccc;
     font-family: inherit;
