@@ -1,0 +1,76 @@
+/* global THREE */
+
+const SCENE_CONFIG = {
+  containerId: 'container-3d',
+  modelPath: 'media/cruz.glb',
+  rotationSpeed: 0.02
+}
+
+function inicializarCena () {
+  /*
+
+  Inicializa a cena 3D, configurando a posição da camera, o tipo de luz que incide sobre o objecto e a posição do modelo, sendo o modelo uma cruz 3D criada em blender
+
+  */
+
+  const container = document.getElementById(SCENE_CONFIG.containerId)
+  const scene = new THREE.Scene()
+
+  const camera = new THREE.PerspectiveCamera(60, container.clientWidth / container.clientHeight, 0.1, 100) // Configuração do posicionamento da câmera
+  camera.position.z = 10
+
+  const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true }) // Informação para renderização, permitindo controlar o aspecto da cruz e o fundo
+  renderer.setSize(container.clientWidth, container.clientHeight)
+  renderer.setPixelRatio(window.devicePixelRatio)
+  container.appendChild(renderer.domElement)
+
+  const ambientLight = new THREE.AmbientLight(0x00ff00, 0.8) // Luz verde para forçar a cor da cruz a ser verde
+  scene.add(ambientLight)
+
+  const LoaderClass = THREE.GLTFLoader
+  const loader = new LoaderClass()
+  let model
+
+  loader.load(
+    SCENE_CONFIG.modelPath,
+    (gltf) => {
+      model = gltf.scene
+
+      const box = new THREE.Box3().setFromObject(model)
+      const center = box.getCenter(new THREE.Vector3())
+      const size = box.getSize(new THREE.Vector3())
+
+      const maxDim = Math.max(size.x, size.y)
+      if (maxDim > 0) {
+        const scale = 5 / maxDim
+        model.scale.set(scale, scale, scale)
+      }
+
+      model.position.x += (model.position.x - center.x)
+      model.position.y += (model.position.y - center.y)
+
+      scene.add(model)
+      animate()
+    }
+  )
+
+  function animate () {
+  /*
+
+  Aplica uma animação de rotação no modelo da cruz, causando com que este rode sobre o eixo y
+
+  */
+
+    requestAnimationFrame(animate)
+    model.rotation.y += SCENE_CONFIG.rotationSpeed
+    renderer.render(scene, camera)
+  }
+
+  window.addEventListener('resize', () => {
+    camera.aspect = container.clientWidth / container.clientHeight
+    camera.updateProjectionMatrix()
+    renderer.setSize(container.clientWidth, container.clientHeight)
+  })
+}
+
+window.addEventListener('DOMContentLoaded', inicializarCena)

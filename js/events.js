@@ -1,39 +1,52 @@
-/* global d3, IntersectionObserver, sessionStorage, gsap */
+/* IntersectionObserver, sessionStorage, gsap */
 
-// Funções para o popup na secção de Oportunidades
+/* Este ficheiro está dedicado às funções dos eventos javascript de galeria, seta de voltar ao topo e popup */
 
-// Expande o popup para tornar-se visível
-function openNav () {
+function showPopup () {
+  /*
+  Verifica se o utilizador já tocou no link presente no popup, verificando o value associado à chave check em session storage. Caso não, mostra o popup
+  */
   const USER_CHECK = sessionStorage.getItem('check')
   if (USER_CHECK !== '1') {
     document.getElementById('sidepopup').style.width = '250px'
   }
 }
-// Reduz o tamanho do popup de forma a esconder-lo
-function closeNav () {
+function hidePopup () {
+  /*
+  Esconde o popup quando chamada
+  */
   document.getElementById('sidepopup').style.width = '0'
 }
 
-// Depois de um utilizador fechar o popup por si próprio, o popup nunca volta a aparecer até uma nova página ser aberta
 function userDismiss () {
+  /*
+  Guarda um par de key / value em sessão. Este valores ficam guardados até o utilizador abrir uma nova instância da página.
+  */
   sessionStorage.setItem('check', '1')
 }
 
-// Lógica para permitar um popup aparecer depois do utilizador passar 3 segundos na secção de Oportunidades da página
 function popupStart () {
+  /*
+
+  Quando o utilizador mantenha-se uma quantidade determinada de tempo na página (3 segundos) é chamada a função de showPopup, de forma a mostrar um popup ao utilizador.
+  Caso o utilizador saia da secção, se o popup estiver à mostra, volta a ser escondido e o timeout sofre um reset de forma reiniciar a contagem. O mesmo acontece se o
+  utilizador sair da secção antes de o popup aparecer
+
+  */
+
   let timeout
   const TIME_INTERVAL = 3000
+  const THRESHOLD = 0.6
 
-
-  const observer = new IntersectionObserver((entries) => { //##!! Necessário simplificar
+  const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         timeout = setTimeout(() => {
-          openNav()
+          showPopup()
         }, TIME_INTERVAL)
       } else {
         clearTimeout(timeout)
-        closeNav()
+        hidePopup()
       }
     })
   }, { threshold: THRESHOLD }
@@ -71,7 +84,6 @@ function mudar (direcao) {
   irPara(atual + direcao)
 }
 
-// Carrega a lógica de popup e do gráfica de barras depois do arranque do site
 window.addEventListener('DOMContentLoaded', () => {
   popupStart()
 }

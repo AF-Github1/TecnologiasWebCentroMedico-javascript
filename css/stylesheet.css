@@ -225,7 +225,7 @@ section.grafico h1{
 .sidepop {
   height: auto;
   min-height: 150px;
-  width: 0px; /* Mudar este valor para 250px caso esteja-se a editar (valor de popup quando ativo) */
+  width: 250px;
   position: fixed;
   top: 50%;      
   right: 0;           
@@ -235,6 +235,7 @@ section.grafico h1{
   transition: 0.5s;
   border-radius: 10px; 
   border: 2px solid black;
+  overflow: hidden;
 }
 
 
@@ -261,6 +262,10 @@ section.grafico h1{
   color: white;
   cursor: pointer;
   text-decoration: none;
+}
+#container-3d {
+  margin-bottom: 10px;
+  cursor: pointer;
 }
 
 #main {

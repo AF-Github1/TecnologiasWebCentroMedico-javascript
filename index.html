@@ -18,6 +18,9 @@
   <script src="https://d3js.org/d3.v7.min.js" ></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 
+  <script src="https://cdn.jsdelivr.net/npm/three@0.145.0/build/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.145.0/examples/js/loaders/GLTFLoader.js"></script>
+
 </head>
 
 <body>
@@ -187,7 +190,8 @@
             <p>Recrutamentos em curso no Centro Académico Clínico dos Açores:</p>
 
         <div id="sidepopup" class="sidepop">
-            <a href="#contacto-form" onclick="closeNav();userDismiss()"><strong>Interessado?</strong><p>Entre em contacto para saber mais sobre as nossas ofertas formativas!</p></a>
+            <a href="#contacto-form" onclick="hidePopup();userDismiss()"><div id="container-3d" style="width: 100%;height: 120px;">
+    </div><strong>Interessado?</strong><p>Entre em contacto para saber mais sobre as nossas ofertas formativas!</p></a>
         </div>
         <div class="table-container">
             <table>
