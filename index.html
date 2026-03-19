@@ -255,6 +255,21 @@
             <form id = "contacto-form">
               <input id = "name" placeholder="Nome*">
               <input id = "email" placeholder="Email*">
+              <div class="telefone">
+                <select id="phone-code">
+                  <option value="+351">🇵🇹 +351</option>
+                  <option value="+34">🇪🇸 +34</option>
+                  <option value="+44">🇬🇧 +44</option>
+                  <option value="+55">🇧🇷 +55</option>
+                  <option value="+1">🇺🇸 +1</option>
+                  <option value="+33">🇫🇷 +33</option>
+                  <option value="+49">🇩🇪 +49</option>
+                  <option value="+39">🇮🇹 +39</option>
+                  <option value="+81">🇯🇵 +81</option>
+                  <option value="+61">🇦🇺 +61</option>
+                </select>
+                <input id="phone-number" type="tel" placeholder="Telefone (opcional)">
+              </div>
               <input id = "subject" placeholder="Assunto*">
               <textarea id = "message" placeholder="Mensagem*"></textarea>
               <button type="submit" onclick="checkForm();">Enviar</button>
