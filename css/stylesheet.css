@@ -367,6 +367,42 @@ th {
     background-color: #0c7c45;
 }
 
+/* Campo de telefone */
+.telefone {
+    display: flex;
+    gap: 0;
+    border: 1px solid #ccc;
+}
+ 
+.telefone select {
+    padding: 10px 8px;
+    border: none;
+    border-right: 1px solid #ccc;
+    background-color: #f9f9f9;
+    font-family: inherit;
+    font-size: 0.95rem;
+    cursor: pointer;
+    outline: none;
+    flex-shrink: 0;
+    color: #333;
+}
+ 
+.telefone select:focus {
+    background-color: #f0f0f0;
+}
+ 
+.telefone input[type="tel"] {
+    padding: 10px;
+    border: 1px solid #ccc;
+    font-family: inherit;
+    flex: 1;
+    outline: none;
+    min-width: 0;
+}
+ 
+.telefone:focus-within {
+    border-color: #333;
+}
 
 
 /* FOOTER */
