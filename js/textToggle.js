@@ -11,7 +11,7 @@ function textSwap (element) {
   const stats = element.querySelector('.stat-box')
   const titulo = element.querySelector('.text-title')
 
-  if (window.getComputedStyle(conteudo).display !== 'none') {
+  if (conteudo.style.display !== 'none') {
     showStats(conteudo, stats, titulo)
   } else {
     showContent(conteudo, stats, titulo)

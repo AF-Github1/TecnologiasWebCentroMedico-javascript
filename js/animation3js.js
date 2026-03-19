@@ -8,15 +8,13 @@ const SCENE_CONFIG = {
 
 function inicializarCena () {
   /*
-
   Inicializa a cena 3D, configurando a posição da camera, o tipo de luz que incide sobre o objecto e a posição do modelo, sendo o modelo uma cruz 3D criada em blender
-
   */
 
   const container = document.getElementById(SCENE_CONFIG.containerId)
   const scene = new THREE.Scene()
 
-  const camera = new THREE.PerspectiveCamera(60, container.clientWidth / container.clientHeight, 0.1, 100) // Configuração do posicionamento da câmera
+  const camera = new THREE.PerspectiveCamera(60, container.clientWidth / container.clientHeight, 0.1, 100) // Configuração do posicionamento da camera
   camera.position.z = 10
 
   const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true }) // Informação para renderização, permitindo controlar o aspecto da cruz e o fundo
@@ -56,9 +54,7 @@ function inicializarCena () {
 
   function animate () {
   /*
-
   Aplica uma animação de rotação no modelo da cruz, causando com que este rode sobre o eixo y
-
   */
 
     requestAnimationFrame(animate)

@@ -27,11 +27,9 @@ function userDismiss () {
 
 function popupStart () {
   /*
-
   Quando o utilizador mantenha-se uma quantidade determinada de tempo na página (3 segundos) é chamada a função de showPopup, de forma a mostrar um popup ao utilizador.
   Caso o utilizador saia da secção, se o popup estiver à mostra, volta a ser escondido e o timeout sofre um reset de forma reiniciar a contagem. O mesmo acontece se o
   utilizador sair da secção antes de o popup aparecer
-
   */
 
   let timeout
