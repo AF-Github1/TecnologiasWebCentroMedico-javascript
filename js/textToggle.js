@@ -1,6 +1,3 @@
-/* Animação para secção de investigação usando GSAP. Permite tocar nas caixas de texto de forma a mostrar alguns dados sobre a área estudada e
-tocar neste caixa de dados para voltar para a caixa de texto */
-
 function textSwap (element) {
   /*
   Permite substituição entre 2 caixas de texto com conteúdo diferentes quando o utilizar clica nelas
