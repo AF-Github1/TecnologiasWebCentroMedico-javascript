@@ -84,7 +84,6 @@ function mudar (direcao) {
   irPara(atual + direcao)
 }
 
-// Carrega a lógica de popup e do gráfica de barras depois do arranque do site
 window.addEventListener('DOMContentLoaded', () => {
   popupStart()
 }
