@@ -46,7 +46,7 @@ function animationBarchart (data = DATA_TABLE, config = BAR_STYLE) {
     .domain([0, 100])
     .range([height - margin.bottom, margin.top])
 
-  const bars = svg.append('g') // Objecto gráfico
+  const bars = svg.append('g') // Objecto gráfico (aspecto das barras)
     .selectAll('rect')
     .data(data.sort((a, b) => d3.ascending(a.ano, b.ano)))
     .join('rect')
@@ -56,7 +56,7 @@ function animationBarchart (data = DATA_TABLE, config = BAR_STYLE) {
     .attr('height', 0)
     .attr('fill', backgroundColor)
 
-  chartTransition(bars, y, THRESHOLD, TRANSITION_DURATION, config) // Chamada para efeito de transição de bar chart
+  chartTransition(bars, y, THRESHOLD, TRANSITION_DURATION, config)
 
   svg.append('text') // Legenda eixo y
     .attr('text-anchor', 'middle')

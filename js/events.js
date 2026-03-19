@@ -4,7 +4,7 @@
 
 function showPopup () {
   /*
-  Verifica se o utilizador já tocou no link presente no popup. Caso não, mostra o popup
+  Verifica se o utilizador já tocou no link presente no popup, verificando o value associado à chave check em session storage. Caso não, mostra o popup
   */
   const USER_CHECK = sessionStorage.getItem('check')
   if (USER_CHECK !== '1') {
@@ -27,10 +27,13 @@ function userDismiss () {
 
 function popupStart () {
   /*
+
   Quando o utilizador mantenha-se uma quantidade determinada de tempo na página (3 segundos) é chamada a função de showPopup, de forma a mostrar um popup ao utilizador.
   Caso o utilizador saia da secção, se o popup estiver à mostra, volta a ser escondido e o timeout sofre um reset de forma reiniciar a contagem. O mesmo acontece se o
   utilizador sair da secção antes de o popup aparecer
+
   */
+
   let timeout
   const TIME_INTERVAL = 3000
   const THRESHOLD = 0.6
