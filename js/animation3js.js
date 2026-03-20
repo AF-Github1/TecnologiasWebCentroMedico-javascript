@@ -25,7 +25,7 @@ function inicializarCena () {
   const ambientLight = new THREE.AmbientLight(0x00ff00, 0.8) // Luz verde para forçar a cor da cruz a ser verde
   scene.add(ambientLight)
 
-  const LoaderClass = THREE.GLTFLoader
+  const LoaderClass = THREE.GLTFLoader // Carregamento de modelo
   const loader = new LoaderClass()
   let model
 
@@ -34,7 +34,7 @@ function inicializarCena () {
     (gltf) => {
       model = gltf.scene
 
-      const box = new THREE.Box3().setFromObject(model)
+      const box = new THREE.Box3().setFromObject(model) // Definição do posicionamento do modelo
       const center = box.getCenter(new THREE.Vector3())
       const size = box.getSize(new THREE.Vector3())
 
@@ -48,16 +48,16 @@ function inicializarCena () {
       model.position.y += (model.position.y - center.y)
 
       scene.add(model)
-      animate()
+      animateRotation()
     }
   )
 
-  function animate () {
+  function animateRotation () {
   /*
   Aplica uma animação de rotação no modelo da cruz, causando com que este rode sobre o eixo y
   */
 
-    requestAnimationFrame(animate)
+    requestAnimationFrame(animateRotation)
     model.rotation.y += SCENE_CONFIG.rotationSpeed
     renderer.render(scene, camera)
   }

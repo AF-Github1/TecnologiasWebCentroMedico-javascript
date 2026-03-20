@@ -22,9 +22,9 @@ function showStats (conteudo, stats, titulo) {
   /*
   Animação GSAP que esconde o texto e mostra as estatísticas sobre o assunto do texto
 
-  * @param {HTML Element} conteudo - Container do texto principal (.conteudo-box).
-  * @param {HTML Element} stats - Container das e statísticas (.stat-box).
-  * @param {HTML Element} titulo - Container do título (.text-title) para animação de cor e escala.
+  * @param {HTML Element} conteudo - Container do texto principal (.conteudo-box)
+  * @param {HTML Element} stats - Container das e statísticas (.stat-box)
+  * @param {HTML Element} titulo - Container do título (.text-title) para animação de cor e escala
  */
 
   gsap.timeline()
@@ -40,9 +40,9 @@ function showContent (conteudo, stats, titulo) {
   /*
   Animação GSAP que esconde as estatísticas e mostra o texto principal
 
-  * @param {HTMLElement} conteudo - Container do texto principal (.conteudo-box).
-  * @param {HTMLElement} stats - Container das e statísticas (.stat-box).
-  * @param {HTMLElement} titulo - Container do título (.text-title) para animação de cor e escala.
+  * @param {HTML Element} conteudo - Container do texto principal (.conteudo-box)
+  * @param {HTML Element} stats - Container das e statísticas (.stat-box)
+  * @param {HTML Element} titulo - Container do título (.text-title) para animação de cor e escala
 
   */
 
