@@ -1,11 +1,26 @@
 // Funções responsáveis pela validação de inputs no formulários
 
 const validateEmail = (email) => {
+  /*
+  Função que verifica se uma determinada string está no formato de xxx@yyy.zzz, em que x poderá assumir qualquer valor, y poderá assumir 
+  valores de letras e números, e z poderá assumir apenas valores de letras, devendo a sequência de z ter 2 ou mais caracteres.
+  xxx e yyy deverão ser separados com o simbolo de arroba { @ } | yyy e zzz deverão ser separados por um ponto { . }
+  Caso a string do email não esteja num formato válido, a função devolve False
+
+  * @param {String} email- String que deverá conter um email válido
+
+  */
   const emailRegex = /^[a-z0-9._%+-]+@[a-z0-9-]+\.[a-z]{2,}$/
   return emailRegex.test(email)
 }
 
 function hasNumbers (t) {
+  /*
+  Função que verifica se uma determinada string contém caracteres que não sejam números inteiros, devolvendo False se a string não os conter
+
+  * @param {String} t - String que deverá conter apenas números inteiros
+
+  */
   var regex = /\d/g
   return regex.test(t)
 }
@@ -18,11 +33,13 @@ const MENSAGENS_PREDEFINIDAS = {
 }
  
 function preencherMensagem () {
+  
   /*
   Preenche a mensagem e o assunto com texto pré-definido consoante a opção selecionada.
   Se o utilizador escolher "Outro assunto...", mostra o campo de texto livre para o assunto.
   A mensagem continua editável após ser preenchida automaticamente.
   */
+
   const select = document.getElementById('subject')
   const customInput = document.getElementById('subject-custom')
   const messageArea = document.getElementById('message')
@@ -47,7 +64,12 @@ function preencherMensagem () {
   }
 }
  
-function checkForm () {
+function checkForm () { //##!! Necessário substituir por classe
+  /*
+
+  Descrição de função aqui
+
+  */
   const name = document.getElementById('name').value
   const email = document.getElementById('email').value
   const selectSubject = document.getElementById('subject').value     // Opções de assunto
