@@ -17,10 +17,10 @@ const BAR_STYLE = {
   height: 250,
   margin: { top: 20, bottom: 50, left: 90, right: 30 },
   backgroundColor: '#f2f6fc',
-  bar_color: 'steelblue'
+  barColor: 'steelblue'
 }
 
-function animationBarchart (data = DATA_TABLE, config = BAR_STYLE) {
+function animationBarchart (data, config) {
   /*
   Criação de gráfico de barras animado utilizando a biblioteca d3.js
 
@@ -28,7 +28,7 @@ function animationBarchart (data = DATA_TABLE, config = BAR_STYLE) {
   * @param {Object} config - Dados utilizados para o aspecto das barras (cores e tamanho)
 
   */
-  const { width, height, margin, backgroundColor } = config
+  const { width, height, margin, backgroundColor, barColor } = config
 
   const svg = d3.select('#grafico .grid-box')
     .append('svg')
@@ -56,7 +56,7 @@ function animationBarchart (data = DATA_TABLE, config = BAR_STYLE) {
     .attr('height', 0)
     .attr('fill', backgroundColor)
 
-  chartTransition(bars, y, THRESHOLD, TRANSITION_DURATION, config)
+  chartTransition(bars, y, THRESHOLD, TRANSITION_DURATION, barColor)
 
   svg.append('text') // Legenda eixo y
     .attr('text-anchor', 'middle')
@@ -64,6 +64,7 @@ function animationBarchart (data = DATA_TABLE, config = BAR_STYLE) {
     .style('font-family', 'Poppins, sans-serif')
     .style('font-size', '20px')
     .style('fill', '#020000')
+
     .text('Projetos Completos')
 
   const xAxis = (g) => {
@@ -82,7 +83,7 @@ function animationBarchart (data = DATA_TABLE, config = BAR_STYLE) {
   svg.append('g').call(yAxis)
 }
 
-function chartTransition (bars, y, thresholdValue = THRESHOLD, duration = TRANSITION_DURATION, config) {
+function chartTransition (bars, y, threshold, duration, barColor) {
   /*
   Função responsável pela animação do gráfico de barras quando o utilizar está a ver acima de uma determinada percentagem da secção associada
 
@@ -93,8 +94,6 @@ function chartTransition (bars, y, thresholdValue = THRESHOLD, duration = TRANSI
   * @param {Object} config - Dados utilizados para o aspecto das barras (cores e tamanho). Nesta função, utiliza-se especificamente o valor de barColor, para definir cor das barras
 
   */
-
-  const { barColor = 'steelBlue' } = config
 
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
@@ -108,7 +107,7 @@ function chartTransition (bars, y, thresholdValue = THRESHOLD, duration = TRANSI
         observer.unobserve(entry.target)
       }
     })
-  }, { threshold: thresholdValue })
+  }, { threshold })
 
   const target = document.querySelector('#grafico')
   if (target) {
@@ -117,5 +116,5 @@ function chartTransition (bars, y, thresholdValue = THRESHOLD, duration = TRANSI
 }
 
 window.addEventListener('DOMContentLoaded', () => {
-  animationBarchart()
+  animationBarchart(DATA_TABLE, BAR_STYLE)
 })

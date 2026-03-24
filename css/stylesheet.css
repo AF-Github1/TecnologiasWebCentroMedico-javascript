@@ -87,7 +87,6 @@ section.investigacao h3{
     grid-template-columns: repeat(3, 1fr);
     gap: 50px;
     min-height: 350px;
-    overflow: hidden;
 }
 
 .grid-box-investigacao {
