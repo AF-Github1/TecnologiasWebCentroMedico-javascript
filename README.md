@@ -6,10 +6,10 @@ Para efeitos de formatação de Javascript, foi utilizado JavaScript Standard St
 
 **Formulário**
 
-O código associado ao formulário está presente no módulo de form.js
+O código associado ao formulário está presente no módulo de form.js e no modulo formClass
 
 Já existia um formulário (não funcional) na versão do trabalho entregue em PE1. 
-Este formulário foi adaptado de forma a que se consiga inserir um Nome, Email, Assunto, Mensagem, e Número Telefónico com código de área associado (Opcional), através de um classe Formulario, que inclui os atributos com os dados mencionados aqui
+Este formulário foi adaptado de forma a que se consiga inserir um Nome, Email, Assunto, Mensagem, e Número Telefónico com código de área associado (Opcional), através de uma classe Formulario (em formClass.js) , que inclui os atributos com os dados mencionados aqui
 e  métodos para a validação dos mesmos.
 
 É verificado se o email está num formato aceitável (xxx@yyy.zzz, onde xxx pode tomar qualquer valor, yyy deverá tomar um valor alfanumérico e zzz deverá tomar apenas valores do alfabeto, de a-z.
