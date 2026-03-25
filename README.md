@@ -14,7 +14,7 @@ Este formulário foi adaptado de forma a que se consiga inserir um Nome, Email, 
 É verificado se o email está num formato aceitável (xxx@yyy.zzz, onde xxx pode tomar qualquer valor, yyy deverá tomar um valor alfanumérico e zzz deverá tomar apenas valores do alfabeto, de a-z.
 xxx e yyy deverão ser separados por um arroba { @ }, yyy e zzz deverão ser separados por um ponto { . }
 
-É verificado se o telefone está no formato correto, sendo composto apenaas por números, e 6 a 15 caracteres no total.
+É verificado se o telefone está no formato correto, sendo composto apenas por números, e 6 a 15 caracteres no total.
 
 Os assuntos selecionados apresentam estruturas de mensagens parcialmente completas na caixa de mensagem de forma a facilitar o trabalho ao utilizador.
 
