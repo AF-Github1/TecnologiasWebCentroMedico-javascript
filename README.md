@@ -9,7 +9,8 @@ Para efeitos de formatação de Javascript, foi utilizado JavaScript Standard St
 O código associado ao formulário está presente no módulo de form.js
 
 Já existia um formulário (não funcional) na versão do trabalho entregue em PE1. 
-Este formulário foi adaptado de forma a que se consiga inserir um Nome, Email, Assunto, Mensagem, e Número Telefónico com código de área associado (Opcional).
+Este formulário foi adaptado de forma a que se consiga inserir um Nome, Email, Assunto, Mensagem, e Número Telefónico com código de área associado (Opcional), através de um classe Formulario, que inclui os atributos com os dados mencionados aqui
+e  métodos para a validação dos mesmos.
 
 É verificado se o email está num formato aceitável (xxx@yyy.zzz, onde xxx pode tomar qualquer valor, yyy deverá tomar um valor alfanumérico e zzz deverá tomar apenas valores do alfabeto, de a-z.
 xxx e yyy deverão ser separados por um arroba { @ }, yyy e zzz deverão ser separados por um ponto { . }
@@ -35,6 +36,12 @@ Utilizada de forma a inserir um gráfico de barras animado.
 
 Quando o utilizador chega à secção relevante na página pela primeira vez, na secção com o nome de "Conheça os nossos parceiros e o nosso impacto", é mostrado um gráfico de barras a crescer, que mostra
 o crescimento de projetos realizados pela instituição desde 2016
+
+Denota-se que além de d3js, foi utilizada a biblioteca SVG de forma a manipular objectos gráficos. No feedback da aula de 20/03 foi indicado para tornar os nomes de variáveis g e d (ambas agrupam instruções relativamente a como construir o gráfico) para algo mais claro,
+contudo a biblioteca espera que estes nomes sejam especificamente indicados como g e d de forma a funcionar.
+
+https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Element/g
+https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Attribute/d
 
 **GSAP**
 
