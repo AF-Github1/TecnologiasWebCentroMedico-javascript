@@ -1,6 +1,17 @@
 // Funções responsáveis pela validação de inputs no formulários
 
-const validateEmail = (email) => {
+class Formulario {
+
+  constructor(name, email, selectSubject, customSubject, message, phoneNumber) {
+    this.name = name
+    this.email = email
+    this.selectSubject = selectSubject
+    this.customSubject = customSubject
+    this.message = message
+    this.phoneNumber = phoneNumber //##!! Existe phone empty, mas à partida pode ser declarado como equivalencia e não como atributo?
+  }
+
+  validateEmail() {
   /*
   
   Função que verifica se uma determinada string está no formato de xxx@yyy.zzz, em que x poderá assumir qualquer valor, y poderá assumir 
@@ -8,32 +19,20 @@ const validateEmail = (email) => {
   xxx e yyy deverão ser separados com o simbolo de arroba { @ } | yyy e zzz deverão ser separados por um ponto { . }
   Caso a string do email não esteja num formato válido, a função devolve False
 
-  * @param {String} email- String que deverá conter um email válido
-
   */
   const emailRegex = /^[a-z0-9._%+-]+@[a-z0-9-]+\.[a-z]{2,}$/
-  return emailRegex.test(email)
+  return emailRegex.test(this.email)
 }
 
-function hasNumbers (t) {
+  hasNumbers() {
   /*
   Função que verifica se uma determinada string contém caracteres que não sejam números inteiros, devolvendo False se a string não os conter
-
-  * @param {String} t - String que deverá conter apenas números inteiros
-
   */
   var regex = /\d/g
-  return regex.test(t)
+  return regex.test(this.name)
 }
 
-const MENSAGENS_PREDEFINIDAS = {
-  'Informações sobre oportunidades': 'Olá,\n\nGostaria de obter mais informações sobre as oportunidades disponíveis no Centro Académico Clínico dos Açores.\n\nCom cumprimentos,\n',
-  'Candidatura a bolsa de investigação': 'Olá,\n\nVenho por este meio manifestar o meu interesse em candidatar-me a uma bolsa de investigação no âmbito do CACA.\nFico a aguardar mais informações sobre o processo de candidatura.\n\nCom cumprimentos,',
-  'Parceria institucional': 'Olá,\n\nRepresento a instituição _______ com interesse em estabelecer uma parceria com o Centro Académico Clínico dos Açores.\nGostaria de agendar uma reunião para discutir as possibilidades de colaboração!\n\nCom cumprimentos,',
-  'Pedido de informação geral': 'Olá,\n\nGostaria de obter informações gerais sobre o Centro Académico Clínico dos Açores, nomeadamente sobre as suas áreas de atuação e projetos em curso.\n\nCom cumprimentos,'
-}
- 
-function preencherMensagem () {
+  preencherMensagem () {
   
   /*
   Preenche a mensagem e o assunto com texto pré-definido consoante a opção selecionada.
@@ -41,6 +40,14 @@ function preencherMensagem () {
   A mensagem continua editável após ser preenchida automaticamente.
   */
 
+
+  const MENSAGENS_PREDEFINIDAS = {
+  'Informações sobre oportunidades': 'Olá,\n\nGostaria de obter mais informações sobre as oportunidades disponíveis no Centro Académico Clínico dos Açores.\n\nCom cumprimentos,\n',
+  'Candidatura a bolsa de investigação': 'Olá,\n\nVenho por este meio manifestar o meu interesse em candidatar-me a uma bolsa de investigação no âmbito do CACA.\nFico a aguardar mais informações sobre o processo de candidatura.\n\nCom cumprimentos,',
+  'Parceria institucional': 'Olá,\n\nRepresento a instituição _______ com interesse em estabelecer uma parceria com o Centro Académico Clínico dos Açores.\nGostaria de agendar uma reunião para discutir as possibilidades de colaboração!\n\nCom cumprimentos,',
+  'Pedido de informação geral': 'Olá,\n\nGostaria de obter informações gerais sobre o Centro Académico Clínico dos Açores, nomeadamente sobre as suas áreas de atuação e projetos em curso.\n\nCom cumprimentos,'
+}
+ 
   const select = document.getElementById('subject')
   const customInput = document.getElementById('subject-custom')
   const messageArea = document.getElementById('message')
@@ -64,6 +71,34 @@ function preencherMensagem () {
     }
   }
 }
+
+
+get name() {
+    return this.name;
+  }
+
+get email() {
+    return this.email;
+  }
+
+get selectSubject() {
+    return this.selectSubject;
+  }
+
+get customSubject() {
+    return this.customSubject;
+  }
+
+get message() {
+    return this.message;
+  }
+    
+get phoneNumber() {
+    return this.phoneNumber;
+  }
+
+}
+
  
 function checkForm () { //##!! Necessário substituir por classe
   /*
@@ -71,21 +106,17 @@ function checkForm () { //##!! Necessário substituir por classe
   Descrição de função aqui
 
   */
-  const name = document.getElementById('name').value
-  const email = document.getElementById('email').value
-  const selectSubject = document.getElementById('subject').value     // Opções de assunto
-  const customSubject = document.getElementById('subject-custom').value   // Assunto customisável
-  const message = document.getElementById('message').value
-  const phoneNumber = document.getElementById('phone-number').value
-  const phoneEmpty = phoneNumber === ''
+  const informacaoForm = new Formulario(document.getElementById('name').value, document.getElementById('email').value,
+                                        document.getElementById('subject').value, document.getElementById('subject-custom').value ,
+                                        document.getElementById('message').value, document.getElementById('phone-number').value);
 
   // Se o utilizador escolheu "Outro Assunto", usa o campo de texto livre; caso contrário usa o select
-  const subject = selectSubject === 'outro' ? customSubject : selectSubject
+  const subject = selectSubject() === 'outro' ? customSubject() : selectSubject()
 
   // /^\d{6,15}$/ -> verifica se o telefone contém apenas dígitos e se contém entre 6 a 15 caracteres
-  const phoneValid = phoneEmpty || /^\d{6,15}$/.test(phoneNumber.replace(/[\s\-().]/g, ''))
+  const phoneValid = phoneEmpty || /^\d{6,15}$/.test(phoneNumber().replace(/[\s\-().]/g, ''))
 
-  if (validateEmail(email) && !hasNumbers(name) && subject !== '' && message !== '' && (phoneEmpty || phoneValid)) {
+  if (validateEmail(email) && !hasNumbers(name) && subject() !== '' && message() !== '' && (phoneEmpty || phoneValid)) {
     alert(name + ', o seu formulário foi enviado com sucesso')
   } else if (!phoneValid) {
     alert('Número de telefone inválido. Insira apenas dígitos (6 a 15 números).')
