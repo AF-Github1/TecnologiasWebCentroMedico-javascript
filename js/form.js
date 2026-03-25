@@ -1,5 +1,3 @@
-
-
 import { Formulario } from './formClass.js'
 
 export function fillMessage () {
