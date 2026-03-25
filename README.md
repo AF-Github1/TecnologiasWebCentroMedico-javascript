@@ -78,4 +78,8 @@ Este popup desaparece automaticamente se o utilizador sair da secção e pode vo
 Caso o utilizador tocar nele, este popup nunca mais aparece até uma nova instância da página ser aberta.
 
 Como indicado em Threejs, este Popup inclui a animação da cruz presente no seu container.
+![til](https://github.com/AF-Github1/TecnologiasWebCentroMedico-javascript/blob/main/ReadmeFiles/chrome_XCoiapmor3.gif)
+
+
+
 
