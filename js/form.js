@@ -2,6 +2,7 @@
 
 const validateEmail = (email) => {
   /*
+  
   Função que verifica se uma determinada string está no formato de xxx@yyy.zzz, em que x poderá assumir qualquer valor, y poderá assumir 
   valores de letras e números, e z poderá assumir apenas valores de letras, devendo a sequência de z ter 2 ou mais caracteres.
   xxx e yyy deverão ser separados com o simbolo de arroba { @ } | yyy e zzz deverão ser separados por um ponto { . }

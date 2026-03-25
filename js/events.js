@@ -66,6 +66,14 @@ const total = 3
 let autoplay = setInterval(() => mudar(1), 5000)
 
 function irPara (index) {
+  /*
+  Função que permite a troca de imagens numa galeria. Dependendo do valor do parâmetro, a imagem desloca-se para a esquerda ou para a direita.
+  Adicionalmente, permite que haja uma troca automática de imagens da esquerda para a direita, depois de um intervalo fixo de tempo
+
+  * @param {Integer} index - Valor que controla qual a imagem que deverá ser apresentada
+
+  */
+
   document.querySelectorAll('.bolinha')[atual].classList.remove('active')
 
   atual = (index + total) % total
@@ -79,6 +87,13 @@ function irPara (index) {
 }
 
 function mudar (direcao) {
+  /*
+  Função que recebe o parâmetro que define a translação da imagem e chama a função que realiza a translação da imagem em si
+
+  * @param {Integer} direcao - Valor que controla a direcao da translação. -1 corresponderá a uma translação à esquerda, +1 corresponderá a uma
+  translação à direita
+
+  */
   irPara(atual + direcao)
 }
 

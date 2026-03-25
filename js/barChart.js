@@ -89,9 +89,9 @@ function chartTransition (bars, y, threshold, duration, barColor) {
 
   * @param {Object} bars - Informação sobre o aspecto das barras
   * @param {Function} y - Dados utilizados para definir os valores gráfico de barras
-  * @param {number} thresholdValue - Valor utilizado para definir a percentagem do ecrã que tem de ser visto para ativar a animação
+  * @param {number} threshold - Valor utilizado para definir a percentagem do ecrã que tem de ser visto para ativar a animação
   * @param {number} duration - Tempo que a animação da barra demorará
-  * @param {Object} config - Dados utilizados para o aspecto das barras (cores e tamanho). Nesta função, utiliza-se especificamente o valor de barColor, para definir cor das barras
+  * @param {Object} barColor - O valor de barColor define a cor das barras
 
   */
 

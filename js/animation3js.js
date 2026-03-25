@@ -8,7 +8,10 @@ const SCENE_CONFIG = {
 
 function inicializarCena () {
   /*
-  Inicializa a cena 3D, configurando a posição da camera, o tipo de luz que incide sobre o objecto e a posição do modelo, sendo o modelo uma cruz 3D criada em blender
+
+  Inicializa a cena 3D, configurando a posição da camera, o tipo de luz que incide sobre o objecto e a posição do modelo, 
+  sendo o modelo uma cruz 3D criada em blender
+  
   */
 
   const container = document.getElementById(SCENE_CONFIG.containerAnimacao)
@@ -54,7 +57,9 @@ function inicializarCena () {
 
   function animateRotation () {
   /*
-  Aplica uma animação de rotação no modelo da cruz, causando com que este rode sobre o eixo y
+
+  Aplica uma animação de rotação no modelo da cruz, causando com que esta rode sobre o eixo y
+
   */
 
     requestAnimationFrame(animateRotation)
